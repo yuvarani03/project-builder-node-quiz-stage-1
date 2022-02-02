@@ -1,0 +1,6 @@
+const fs = require('fs')
+const question = require('./question')
+fs.writeFileSync("question.json", JSON.stringify({quiz:[]}))
+const quest = JSON.parse(fs.readFileSync("question.json"))
+quest.quiz.push(question())
+fs.writeFileSync("question.json",JSON.stringify(quest))
